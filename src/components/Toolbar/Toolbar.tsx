@@ -5,10 +5,13 @@ import { TEST_IDS } from '../../config/constants';
 
 interface Props {
   confirmText: string;
+  cancelText: string;
+  cancelTextColor: string;
   confirmTextColor: string;
   toolbarBackground: string;
   toolbarBorderColor: string;
   onConfirm: () => void;
+  onCancel: () => void;
 }
 
 /**
@@ -17,6 +20,9 @@ interface Props {
  */
 export default ({
   confirmText,
+  cancelText,
+  cancelTextColor,
+  onCancel,
   confirmTextColor,
   toolbarBackground,
   toolbarBorderColor,
@@ -31,6 +37,18 @@ export default ({
       },
     ]}
   >
+    <TouchableOpacity
+      activeOpacity={0.4}
+      onPress={onCancel}
+      testID={TEST_IDS.CONFIRM_BUTTON}
+      style={{ flex: 1 }}
+    >
+      <View style={styles.toolbarConfirmContainer}>
+        <Text style={[styles.toolbarConfirmText, { color: cancelTextColor }]}>
+          {cancelText}
+        </Text>
+      </View>
+    </TouchableOpacity>
     <TouchableOpacity
       activeOpacity={0.4}
       onPress={onConfirm}

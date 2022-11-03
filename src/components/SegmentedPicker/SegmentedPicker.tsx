@@ -54,6 +54,8 @@ export interface Props {
   confirmText: string;
   nativeTestID: string;
   // Styling
+  cancelText: string;
+  cancelTextColor: string;
   confirmTextColor: string;
   pickerItemTextColor: string;
   toolbarBackgroundColor: string;
@@ -634,6 +636,8 @@ export default class SegmentedPicker extends Component<Props, State> {
       selectionBackgroundColor,
       selectionBorderColor,
       backgroundColor,
+      cancelText,
+      cancelTextColor,
     } = this.props;
 
     return (
@@ -672,11 +676,16 @@ export default class SegmentedPicker extends Component<Props, State> {
             style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }]}
           >
             <Toolbar
+              cancelText={cancelText}
+              cancelTextColor={cancelTextColor}
               confirmText={confirmText}
               confirmTextColor={confirmTextColor}
               toolbarBackground={toolbarBackgroundColor}
               toolbarBorderColor={toolbarBorderColor}
               onConfirm={this.onConfirm}
+              onCancel={() => {
+                this.hide();
+              }}
             />
 
             <View style={styles.selectableArea}>
