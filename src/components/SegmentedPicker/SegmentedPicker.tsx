@@ -63,6 +63,11 @@ export interface Props {
   selectionBackgroundColor: string;
   selectionBorderColor: string;
   backgroundColor: string;
+  cancelTextStyle: object;
+  middleTextStyle: object;
+  confirmTextStyle: object;
+  middleText: string;
+  middleTextColor: string;
   // Events
   onValueChange: (event: SelectionEvent) => void;
   onCancel: (event: Selections) => void,
@@ -638,6 +643,11 @@ export default class SegmentedPicker extends Component<Props, State> {
       backgroundColor,
       cancelText,
       cancelTextColor,
+      cancelTextStyle,
+      confirmTextStyle,
+      middleTextStyle,
+      middleTextColor,
+      middleText,
     } = this.props;
 
     return (
@@ -683,6 +693,11 @@ export default class SegmentedPicker extends Component<Props, State> {
               toolbarBackground={toolbarBackgroundColor}
               toolbarBorderColor={toolbarBorderColor}
               onConfirm={this.onConfirm}
+              middleText={middleText}
+              middleTextColor={middleTextColor}
+              cancelTextStyle={cancelTextStyle}
+              confirmTextStyle={confirmTextStyle}
+              middleTextStyle={middleTextStyle}
               onCancel={() => {
                 this.hide();
               }}

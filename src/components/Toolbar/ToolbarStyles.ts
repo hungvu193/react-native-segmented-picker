@@ -12,7 +12,20 @@ export default StyleSheet.create({
     alignSelf: 'flex-start',
   },
 
+  toolbarCancelContainer: {
+    width: 100,
+    height: '100%',
+    paddingLeft: 30,
+    justifyContent: 'center',
+  },
+  toolbarMiddleContainer: {
+    width: '100%',
+    flex: 1,
+    height: '100%',
+    justifyContent: 'center',
+  },
   toolbarConfirmContainer: {
+    width: 100,
     height: '100%',
     paddingLeft: 30,
     justifyContent: 'center',
@@ -26,4 +39,21 @@ export default StyleSheet.create({
     paddingBottom: TEXT_CORRECTION,
     paddingLeft: 0,
   },
+  toolbarCancelText: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    paddingTop: 0,
+    paddingRight: GUTTER_WIDTH,
+    paddingBottom: TEXT_CORRECTION,
+    paddingLeft: 0,
+  },
+  toolbarMiddleText: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    paddingTop: 0,
+    paddingRight: GUTTER_WIDTH,
+    paddingBottom: TEXT_CORRECTION,
+    paddingLeft: 0,
+  },
+
 });
