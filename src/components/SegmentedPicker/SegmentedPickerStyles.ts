@@ -15,7 +15,6 @@ export default StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     flex: 1,
     flexDirection: 'column',
-    paddingHorizontal: 30,
   },
 
   closeableContainer: {

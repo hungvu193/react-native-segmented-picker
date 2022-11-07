@@ -68,6 +68,8 @@ export interface Props {
   confirmTextStyle: object;
   middleText: string;
   middleTextColor: string;
+  pickerItemFontFamily: string;
+  pickerItemSelectedTextColor: string;
   // Events
   onValueChange: (event: SelectionEvent) => void;
   onCancel: (event: Selections) => void,
@@ -648,6 +650,8 @@ export default class SegmentedPicker extends Component<Props, State> {
       middleTextStyle,
       middleTextColor,
       middleText,
+      pickerItemFontFamily,
+      pickerItemSelectedTextColor,
     } = this.props;
 
     return (
@@ -720,6 +724,8 @@ export default class SegmentedPicker extends Component<Props, State> {
                       selectionBackgroundColor,
                       selectionBorderColor,
                       pickerItemTextColor,
+                      pickerItemFontFamily,
+                      pickerItemSelectedTextColor,
                     }}
                   />
                 </View>

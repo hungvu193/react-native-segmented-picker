@@ -14,6 +14,9 @@ class PickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
   var options = [PickerColumn]()
   var defaultSelectionsApplied: Bool = false
   var theme: PickerTheme = PickerTheme(theme: nil)
+  var selectedRow: Int {
+      return pickerView.selectedRow(inComponent: 0)
+  }
 
   // React Props
   @objc(nativeTestID) var nativeTestIDProp = NSString()
@@ -191,12 +194,10 @@ class PickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     let label = UILabel(frame: frame)
     label.text = options[component].items[row].label
     label.accessibilityIdentifier = options[component].items[row].testID
-    label.font = label.font.withSize(15.5)
-    if #available(iOS 14, *) {
-      // Do not modify the font color.
-    } else {
-      label.textColor = UIColor(hexString: theme.pickerItemTextColor)
-    }
+    label.font = label.font.withSize(22)
+    label.name = theme.pickerItemFontFamily;
+
+    label.textColor = UIColor(hexString: theme.pickerItemTextColor)
     label.textAlignment = .center
     return label
   }
@@ -212,7 +213,7 @@ class PickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
   ) -> Void {
     let columnKey = options[component].key
     let columnValue = options[component].items[row].value
-    onValueChange?(["column": columnKey, "value": columnValue])
+    onValueChange?(["column": columnKey, "value": columnValue]);
   }
 
   /**

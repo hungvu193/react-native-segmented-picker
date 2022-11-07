@@ -23,6 +23,7 @@ export default StyleSheet.create({
     flex: 1,
     height: '100%',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   toolbarConfirmContainer: {
     width: 100,
